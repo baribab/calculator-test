@@ -11,5 +11,8 @@ export function multFunction(x, y) {
 }
 
 export function divFunction(x, y) {
+  if (x == 0 || y == 0) {
+    throw new Error("Não é possível divisão por 0");
+  }
   return x / y;
 }
