@@ -1,4 +1,4 @@
-//::
+// importa as funções do coreMath
 import { sumFunction, subFunction, multFunction, divFunction } from "./coreMath.js";
 
 // calcular média
