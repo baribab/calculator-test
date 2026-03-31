@@ -1,5 +1,10 @@
 //::
-import { sumFunction, subFunction, multFunction, divFunction } from "./coreMath.js";
+import {
+  sumFunction,
+  subFunction,
+  multFunction,
+  divFunction,
+} from "./coreMath.js";
 
 // calcular média
 export function calculateAverage(purchases) {
