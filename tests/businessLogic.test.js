@@ -11,17 +11,13 @@ import {
 describe("calculateAverage", () => {
   test("Deve calcular a média de múltiplos valores", () => {
     const purchases = [10, 20, 30];
-
     const result = calculateAverage(purchases);
-
     expect(result).toBe(20);
   });
 
   test("Deve calcular a média com um único valor", () => {
     const purchases = [50];
-
     const result = calculateAverage(purchases);
-
     expect(result).toBe(50);
   });
 
@@ -46,11 +42,8 @@ describe("calculateDiscountedPrice", () => {
   });
 
   test("Desconto de 0% deve retornar o preço original", () => {
-    let firstNum = 20;
-    let secondNum = 0;
-
-    const result = calculateDiscountedPrice(firstNum, secondNum);
-    expect(result).toBe(firstNum);
+    const result = calculateDiscountedPrice(20, 0);
+    expect(result).toBe(20);
   });
 
   test("Desconto de 100% deve retornar zero", () => {
@@ -59,12 +52,11 @@ describe("calculateDiscountedPrice", () => {
   });
 
   test("Deve lançar erro se o desconto for maior que 100%", () => {
-    const result = calculateDiscountedPrice(20, 100);
-    expect(result).toBe(0);
+    expect(() => calculateDiscountedPrice(20, 150)).toThrow();
   });
 
   test("Deve lançar erro se o preço for zero ou negativo", () => {
-    const result = calculateDiscountedPrice(2, 10);
-    expect(result).toBe(1.8);
+    expect(() => calculateDiscountedPrice(0, 10)).toThrow();
+    expect(() => calculateDiscountedPrice(-10, 10)).toThrow();
   });
 });
